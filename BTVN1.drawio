@@ -1,0 +1,67 @@
+<mxfile host="Electron" agent="Mozilla/5.0">
+  <diagram id="export-sequence" name="Sequence Diagram">
+    <mxGraphModel dx="1106" dy="749" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontStyle=1;fontSize=18;" value="SEQUENCE DIAGRAM - PHÂN HỆ XUẤT KHO RIKKEI LOGISTICS" vertex="1">
+          <mxGeometry height="40" width="700" x="250" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="actor" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" value="Nhân viên kho" vertex="1">
+          <mxGeometry height="80" width="60" x="70" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="ui" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1;" value="WarehouseUI" vertex="1">
+          <mxGeometry height="50" width="130" x="260" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="inv" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1;" value="InventoryManager" vertex="1">
+          <mxGeometry height="50" width="150" x="650" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="lifeA" parent="1" style="shape=line;dashed=1;html=1;" vertex="1">
+          <mxGeometry height="480" x="100" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="lifeUI" parent="1" style="shape=line;dashed=1;html=1;" vertex="1">
+          <mxGeometry height="510" x="325" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="lifeInv" parent="1" style="shape=line;dashed=1;html=1;" vertex="1">
+          <mxGeometry height="510" x="725" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="msg1" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;" value="Quét mã kiện hàng  [Sync]">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="100" y="220" as="sourcePoint" />
+            <mxPoint x="325" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg2" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;" value="export_package()  [Sync]">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="325" y="290" as="sourcePoint" />
+            <mxPoint x="725" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="self" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;" value="Kiểm tra hạn lưu kho  [Self]">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="725" y="360" as="sourcePoint" />
+            <mxPoint x="780" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="selfReturn" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="780" y="405" as="sourcePoint" />
+            <mxPoint x="725" y="405" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg4" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;" value="Kết quả xuất kho  [Return]">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="725" y="470" as="sourcePoint" />
+            <mxPoint x="325" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="note1" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;" value="Lỗi 1 đã sửa: InventoryManager tự kiểm tra trên chính nó → Self, không gửi sang đối tượng khác." vertex="1">
+          <mxGeometry height="90" width="290" x="820" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="note2" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;" value="Lỗi 2 đã sửa: kết quả xử lý → Return (nét đứt, mũi tên mở), không dùng Sync." vertex="1">
+          <mxGeometry height="80" width="330" x="410" y="520" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
